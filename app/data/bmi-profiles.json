@@ -1,0 +1,9 @@
+[
+  { "id": "very-slim", "label": "超細身", "min": 16, "max": 17, "width": 0.72, "description": "骨格が際立つ、かなり華奢な印象" },
+  { "id": "slim", "label": "細身", "min": 18, "max": 19, "width": 0.84, "description": "すっきりと軽やかなシルエット" },
+  { "id": "average", "label": "普通", "min": 20, "max": 22, "width": 1, "description": "バランスの取れた標準的な体格" },
+  { "id": "solid", "label": "がっしり", "min": 22, "max": 25, "width": 1.16, "description": "肩幅があり、骨格の強さを感じる体格" },
+  { "id": "muscular", "label": "筋肉質", "min": 23, "max": 27, "width": 1.18, "description": "引き締まった厚みのあるシルエット" },
+  { "id": "plump", "label": "ぽっちゃり", "min": 28, "max": 34, "width": 1.3, "description": "丸みのあるやわらかな体格" },
+  { "id": "large", "label": "大柄", "min": 29, "max": 36, "width": 1.42, "description": "横幅と存在感のある大きな体格" }
+]

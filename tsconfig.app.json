@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "incremental": false },
+  "include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", "web/**/*.tsx", "vite.pages.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

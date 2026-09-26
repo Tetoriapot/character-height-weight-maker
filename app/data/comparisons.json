@@ -1,0 +1,17 @@
+[
+  { "id": "average-man", "label": "平均男性", "shortLabel": "男性", "height": 171, "kind": "person", "group": "人物" },
+  { "id": "average-woman", "label": "平均女性", "shortLabel": "女性", "height": 158, "kind": "person", "group": "人物" },
+  { "id": "school-child", "label": "小学6年生", "shortLabel": "小学生", "height": 147, "kind": "child", "group": "人物" },
+  { "id": "door", "label": "一般的なドア", "shortLabel": "ドア", "height": 200, "kind": "door", "group": "身近なもの" },
+  { "id": "door-knob", "label": "ドアノブ", "shortLabel": "ノブ", "height": 90, "kind": "doorKnob", "group": "身近なもの" },
+  { "id": "vending-machine", "label": "自動販売機", "shortLabel": "自販機", "height": 183, "kind": "vending", "group": "街・お店" },
+  { "id": "traffic-button", "label": "信号機の押しボタン", "shortLabel": "信号ボタン", "height": 105, "kind": "traffic", "group": "街・お店" },
+  { "id": "convenience-shelf", "label": "コンビニの棚", "shortLabel": "コンビニ棚", "height": 180, "kind": "shelf", "group": "街・お店" },
+  { "id": "school-desk", "label": "学校の机", "shortLabel": "学校机", "height": 70, "kind": "desk", "group": "家具" },
+  { "id": "school-chair", "label": "学校の椅子", "shortLabel": "学校椅子", "height": 76, "kind": "chair", "group": "家具" },
+  { "id": "kei-car", "label": "軽自動車", "shortLabel": "軽自動車", "height": 165, "kind": "keiCar", "group": "乗りもの" },
+  { "id": "sedan", "label": "一般的な乗用車", "shortLabel": "一般車", "height": 145, "kind": "car", "group": "乗りもの" },
+  { "id": "sofa", "label": "2人掛けソファ", "shortLabel": "ソファ", "height": 82, "kind": "sofa", "group": "家具" },
+  { "id": "refrigerator", "label": "大型冷蔵庫", "shortLabel": "冷蔵庫", "height": 180, "kind": "fridge", "group": "家具" },
+  { "id": "bed", "label": "シングルベッド", "shortLabel": "ベッド", "height": 45, "kind": "bed", "group": "家具" }
+]
