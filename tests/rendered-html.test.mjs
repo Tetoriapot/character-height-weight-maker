@@ -62,6 +62,20 @@ test("uses hairless mannequins for every gender and keeps height fixed for all h
           assert.match(html, /data-silhouette-style="mannequin"/);
           assert.doesNotMatch(html, /data-hairstyle|NaN|Infinity|undefined/);
           assert.equal((html.match(/<path /g) ?? []).length, 6);
+          assert.equal((html.match(/data-part="leg"/g) ?? []).length, 2);
+          assert.equal((html.match(/data-part="arm"/g) ?? []).length, 2);
+          assert.equal((html.match(/data-part="torso"/g) ?? []).length, 1);
+          const legs = [...html.matchAll(/data-part="leg" d="([^"]+)"/g)];
+          assert.equal(legs[0][1], legs[1][1], "both legs use the same mirrored contour");
+          const legCoordinates = legs[0][1].match(/-?\d+(?:\.\d+)?/g).map(Number);
+          const legX = legCoordinates.filter((_, index) => index % 2 === 0);
+          const legY = legCoordinates.filter((_, index) => index % 2 === 1);
+          // Bezier curves stay inside their control-point bounds. No leg crosses
+          // the centreline or extends below the common floor, including extremes.
+          assert.ok(legX.every((value) => value > 0));
+          assert.ok(Math.min(...legX) < 0.3, "closed stance retains a narrow seam");
+          assert.equal(Math.max(...legY), 0);
+          assert.ok(legY.every((value) => value >= -character.proportions(age, headScale).hip - 2));
           assert.match(html, /translate\(100 300\) scale\(1\)/);
           const p = character.proportions(age, headScale);
           assert.equal(p.headCenter + p.radius, 220);

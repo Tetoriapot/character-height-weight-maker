@@ -160,8 +160,8 @@ export default function CharacterMaker() {
 
   return <main className="site-shell">
     <header className="site-header"><a href="#top" aria-label="身長・体重メーカー トップへ"><Brand /></a><HeaderTools theme={theme} onThemeChange={setTheme} /></header>
-    <section className="hero" id="top"><p className="eyebrow"><span />CREATOR&apos;S TOOL #01</p><h1>その身長、<br className="mobile-break" /><em>並べて</em>見てみよう。</h1>
-      <p className="hero-copy">ふたりの目線、肩の位置、身近な物とのサイズ感。<br />キャラクターの存在感を、創作の資料に。</p>
+    <section className="hero" id="top"><p className="eyebrow"><span />CREATOR&apos;S TOOL #01</p><h1>キャラクターの<br className="mobile-break" /><em>身長・体格</em>を比較</h1>
+      <p className="hero-copy">2人の身長差と、目・肩・腰・膝の位置を確認。<br />身近な物との比較を、創作資料として保存できます。</p>
       <div className="hero-points"><span>✓ 2人の身長差</span><span>✓ キャラ保存</span><span>✓ PNG・URL共有</span></div>
     </section>
     <div className="workspace-toolbar">
@@ -228,11 +228,11 @@ export default function CharacterMaker() {
       </section>
     </section>
     <div className="toast" role="status" aria-live="polite" aria-atomic="true">{message && <><span>{message}</span><button type="button" aria-label="通知を閉じる" onClick={() => setMessage("")}>×</button></>}</div>
-    <section className="how-it-works" aria-labelledby="how-heading"><p className="eyebrow"><span />QUICK GUIDE</p><h2 id="how-heading">ふたりの輪郭から、物語が見えてくる。</h2><div className="guide-grid">
+    <section className="how-it-works" aria-labelledby="how-heading"><p className="eyebrow"><span />QUICK GUIDE</p><h2 id="how-heading">設定・比較・保存の手順</h2><div className="guide-grid">
       <div><span>1</span><strong>A・Bを設定する</strong><p>名前・身長・体型を設定。よく使うキャラは保存して、いつでも呼び出せます。</p></div>
       <div><span>2</span><strong>並べて確かめる</strong><p>身長差や目線、肩・腰・膝の位置を比較。身近な物との比較にも切り替えられます。</p></div>
       <div><span>3</span><strong>創作の資料にする</strong><p>必要な情報だけ表示してPNG保存。比較URLなら同じ設定を相手も開けます。</p></div>
     </div></section>
-    <footer className="site-footer"><Brand /><p>創作の「なんとなく」を、目に見えるかたちへ。</p><small>体重・BMIは創作向けの目安です。医療的な判断には使用しないでください。保存データはブラウザのデータ削除で消去されます。</small></footer>
+    <footer className="site-footer"><Brand /><p>キャラクターの身長・体格を比較する創作資料ツール</p><small>体重・BMIは創作向けの目安です。医療的な判断には使用しないでください。保存データはブラウザのデータ削除で消去されます。</small></footer>
   </main>;
 }

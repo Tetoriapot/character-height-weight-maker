@@ -36,7 +36,7 @@ Windows/macOS/Linux 共通の起動スクリプトを使います。
 
 ## 保存・共有の扱い
 
-`localStorage` のキー：
+`localStorage`の保存キーは次の3つです。
 
 - `character-maker-settings-v2`：現在の設定。旧版の `character-maker-settings-v1` も読込可能。
 - `character-maker-library-v1`：保存キャラ一覧。
@@ -68,7 +68,7 @@ GitHub Pages版は公開サイトです。URLに含まれる設定はリンク�
 | `app/lib/export-card.ts` | SVGのスタイル解決・PNG書き出し |
 | `app/globals.css` / `app/maker-expansion.css` | 共通デザイン・拡張UI・レスポンシブ |
 
-PNGでは html2canvas が複製したSVGの固定スタイルを解除し、書き出し幅と透過設定を適用してから画像化します。
+PNGではhtml2canvasが複製したSVGの固定スタイルを解除し、書き出し幅と透過設定を適用してから画像化します。
 
 ## 検証
 
@@ -79,6 +79,7 @@ PNGでは html2canvas が複製したSVGの固定スタイルを解除し、書�
 
 身体比率はイラスト用の近似で、身体測定や医学的な推定ではありません。
 マネキンは頭頂から足底までを表示身長に合わせます。標準の成人は約7.5頭身、幼児・小学生は頭を大きめにし、頭部サイズ調整後も身体ガイドと同じ比率で配置します。
+胴体・左右の腕・左右の脚を別々の輪郭で描画します。脚は中央の細い境界で分け、足をそろえた姿勢を保ちます。
 年齢は描画に反映しますが、体重計算は全年齢共通の創作向けテーブルです。
 体重を手動変更しても、シルエットは選択した体型に従います。
 比較対象の寸法は代表例で、製品・地域等により異なります。
@@ -86,12 +87,18 @@ PNGでは html2canvas が複製したSVGの固定スタイルを解除し、書�
 3人以上の比較、種族、姿勢調整、PDF、作品単位の管理などは未実装です。
 第1段階の使い勝手を確認しながら、比較人数や表現の拡張へ進めます。
 
+## マネキンの参考資料
+
+2026-11-07の形状修正では、[CLIP STUDIO PAINT公式の3Dデッサン人形ガイド](https://help.clip-studio.com/en-us/manual_en/660_3d/Adjusting_a_3D_Drawing_Figure_Body_Shape.htm)に掲載された正面図と体格別の画像を参照しました。
+肩から上腕への丸み、胴と骨盤のつながり、太もも・膝・ふくらはぎの太さの変化を参考にしています。公開画像や3Dモデルのデータは組み込まず、既存SVGの制御点を調整しました。
+表示は正面・閉脚の簡略化した輪郭です。3D表示やポーズ編集は追加していません。頭頂・足底・身体位置ガイドの基準は維持しています。
+
 ## 配信
 
 GitHub Pages版は `web/` を入口に既存Reactコンポーネントをそのまま使用します。
 `pnpm build:pages` の出力は `dist-pages/`。サーバーや認証・データベースは不要です。
 `vite.pages.config.ts` は `PAGES_BASE_PATH` で公開先のサブパスに対応します。
-GitHubの Settings → Pages で Source を GitHub Actions にすると、`.github/workflows/pages.yml` が main 更新時に検証・公開します。
+GitHubのSettings → PagesでSourceをGitHub Actionsにすると、`.github/workflows/pages.yml`がmain更新時に検証・公開します。
 公式資料：[ViteのGitHub Pages設定](https://vite.dev/guide/static-deploy#github-pages)、[GitHub Pagesのワークフロー](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
 Sites の既存プロジェクトIDは `.openai/hosting.json` で管理します。
